@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= foundPlanet.name %></title>
+</head>
+<body>
+    <h1>About <%= foundPlanet.name %></h1>
+
+    <% if (foundPlanet.hasRings = true) { %>
+        <p><%= foundPlanet.name %> has rings!</p>
+   <% } else { %>
+        <p><% foundPlanet.name%> does not have any rings.</p>
+    <% } %>
+    <p>It has <%=foundPlanet.hasMoons %> moons and is the <%=foundPlanet.distanceFromSun %> from the sun! </p>
+
+</body>
+</html>

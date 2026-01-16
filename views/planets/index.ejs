@@ -6,6 +6,12 @@
     <title>Planet's Index Page</title>
 </head>
 <body>
-
+    <h1>Planets</h1>
+    <ul>
+        <% allPlanets.forEach(planet =>{  %>
+            <li><a href="/planets/<%= planet._id%>"><%= planet.name%></a></li>
+        <%  }) %>
+    </ul>
+    <a href="planets/new">Add a new planet</a>
 </body>
 </html>
