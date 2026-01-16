@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit planet </title>
+</head>
+<body>
+<h1> Edit <%=foundPlanet.name%> </h1>
+<form action="/planets/<%=foundPlanet._id%>?_method=PUT" method="POST">
+<label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= foundPlanet.name %>">
+<label for="distanceFromSun">Distance from the sun:</label>
+    <input type="number" name="distanceFromSun" id="distanceFromSun" value="<%=foundPlanet.distanceFromSun%>"/>
+<label for="hasRings">Has rings?</label>
+    <input type="checkbox" name="hasRings" id="hasRings" <% if (foundPlanet.hasRings) { %>checked<%}%> >
+<label for="hasMoons">How many moons?</label>
+    <input type="number" name="hasMoons" id="hasMoons" value="<%=foundPlanet.hasMoons%>">
+    <button type="submit">Update planet</button>
+</form>
+<a href="/planets">back to planets</a>
+</body>
+</html>

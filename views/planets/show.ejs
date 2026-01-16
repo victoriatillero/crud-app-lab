@@ -8,12 +8,25 @@
 <body>
     <h1>About <%= foundPlanet.name %></h1>
 
-    <% if (foundPlanet.hasRings = true) { %>
+    <% if (foundPlanet.hasRings === true) { %>
         <p><%= foundPlanet.name %> has rings!</p>
    <% } else { %>
-        <p><% foundPlanet.name%> does not have any rings.</p>
+        <p><%= foundPlanet.name%> does not have any rings.</p>
     <% } %>
-    <p>It has <%=foundPlanet.hasMoons %> moons and is the <%=foundPlanet.distanceFromSun %> from the sun! </p>
-
+    <p>It has <%=foundPlanet.hasMoons %> moons and is the <%=foundPlanet.distanceFromSun%>
+        <% if (foundPlanet.distanceFromSun === 1) { %>
+            st planet from the sun!
+       <% } else if (foundPlanet.distanceFromSun ===2) { %>
+        nd planet from the sun
+       <% } else if (foundPlanet.distanceFromSun === 3) {  %>
+            rd planet from the sun
+        <% } else { %>
+            th from the sun!
+        <% } %>
+    <form action="/planets/<%=foundPlanet._id%>?_method=DELETE" method= "POST">
+        <button type="submit"> delete <%= foundPlanet.name %></button>
+    </form>
+    <a href="/planets">back to planets</a>
+    <a href="/planets/<%=foundPlanet._id%>/edit">Edit Planet</a>
 </body>
 </html>
